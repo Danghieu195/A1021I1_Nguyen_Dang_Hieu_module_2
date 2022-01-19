@@ -1,4 +1,4 @@
-package _7_Abstract_Class_and_Interface.Bai_tap;
+package _7_Abstract_Class_and_Interface.Bai_tap.Bai_tap_1;
 
 public abstract class HinhHoc {
     private String color;
