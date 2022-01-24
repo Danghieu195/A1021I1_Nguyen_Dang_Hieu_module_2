@@ -14,4 +14,21 @@ public class StudentRepository implements IStudentRepository {
     public Student[] getAll() {
         return students;
     }
+//
+//    @Override
+//    public void add(Student student) {
+//        for ( int i = 0; i < students.length; i++) {
+//            if ( students[i] == null) {
+//                students[i] = student;
+//                break;
+//            }
+//        }
+//        System.out.println("Danh sách mới sau khi thêm là: ");
+//        for ( Student studentAdd : students) {
+//            if ( studentAdd == null) {
+//                break;
+//            }
+//            System.out.println(studentAdd);
+//        }
+//    }
 }

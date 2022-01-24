@@ -19,14 +19,22 @@ public class Them_phan_tu_vao_mang {
         System.out.println("Mảng bạn vừa nhập là: " + Arrays.toString(arr));
 
         int x; // biến x là số cần chèn
-
+        int indexAdd;
         System.out.println("Mời bạn nhập số cần chèn: ");
         x = Integer.parseInt(sc.nextLine());
-        int deleValue = 2;
-        for( int i = x; i > deleValue; i--) {
-            arr[i] = arr[i -1];
+
+        System.out.println("Bạn muốn chèn ở vị trí nào trong mảng? ");
+        indexAdd = Integer.parseInt(sc.nextLine());
+
+        if ( indexAdd < 0 || indexAdd > arr.length - 1 ) {
+            System.out.println("Không thể chèn số vào trong mảng");
+        } else {
+            for ( int i = arr.length - 1; i > indexAdd; i-- ){
+                 arr[i] = arr[i-1];
+            }
+            arr[indexAdd] = x;
         }
-        arr[deleValue] = x;
         System.out.println("Mảng của bạn sau khi chèn là: " + Arrays.toString(arr));
+
     }
 }

@@ -13,6 +13,31 @@ public class StudentService implements IStudentService {
 
     @Override
     public void add() {
+        System.out.println("Mời nhập mã số học sinh: ");
+        int codeHocSinh = Integer.parseInt(sc.nextLine());
+        System.out.println("Mời nhập tên học sinh: ");
+        String nameHocSinh = sc.nextLine();
+        System.out.println("Mời nhập ngày tháng năm sinh: ");
+        String dateOfBirth = sc.nextLine();
+        System.out.println("Mời nhập điểm học sinh: ");
+        int point = Integer.parseInt(sc.nextLine());
+
+        Student[] students = iStudentRepository.getAll();
+
+        Student student1 = new Student(codeHocSinh, nameHocSinh, dateOfBirth, point);
+       for ( int i = 0; i < students.length; i++) {
+           if (students[i] == null) {
+               students[i] = student1;
+               break;
+           }
+       }
+           System.out.println("Danh sách sau khi được thêm là: ");
+            for (Student studentAdd : students) {
+                if ( studentAdd == null) {
+                    break;
+                }
+                System.out.println(studentAdd);
+            }
 
     }
 
@@ -20,10 +45,9 @@ public class StudentService implements IStudentService {
     public void display() {
         Student[] students = iStudentRepository.getAll();
         for (Student student : students) {
-            if ( student == null){
-                break;
+            if ( student != null){
+                System.out.println(student);
             }
-            System.out.println(student);
         }
 
     }
@@ -32,47 +56,44 @@ public class StudentService implements IStudentService {
     public void delete() {
         System.out.println("Mời bạn nhập mã số học sinh cần xóa: ");
         int maSoHocSinh = Integer.parseInt(sc.nextLine());
+
         Student[] students = iStudentRepository.getAll();
-        int dem = search(students, maSoHocSinh);
-        int i = dem;
 
-        for (; i < students.length; i++) {
-            if ( students[i] == null) {
-                students[i-1] = null;
+        // int i = search(students, maSoHocSinh);
+        for (int i = 0; i < students.length;i++) {
+            if ( students[i].getCodeStudent() == maSoHocSinh) {
+                students[i] = null;
                 break;
             }
-           students[i] = students[i+1];
-        }
-        System.out.println("Đã xóa học sinh " + students[dem].getNameStudent() + " ra khỏi danh sách");
-
-        for ( Student student : students) {
-            if (student == null) {
-                break;
-            }
-            System.out.println(student);
         }
 
-//       System.out.println("Danh sách học sinh sau khi xóa là: " + super.toString());
+//        for (; i < students.length; i++) {
+//            if ( students[i].getCodeStudent() == maSoHocSinh) {
+//                students[i+1] = students[i];
+//            }
+//        }
+//        students[i -  1] = null;
     }
 
-    // viết phương thức search để tìm kiếm mã số sinh viên để xóa
-    public static int search(Student[] students, int code) {
-
-        boolean check = false;
-        int count = 0;
-        for (int i = 0; i < students.length; i++) {
-            if ( students[i] == null) {
-                break;
-            } if ( students[i].getCodeStudent() == code) {
-                check = true;
-                count = i;
-            }
-
-            if (!check) {
-                System.out.println("Không tìm thấy học sinh có mã số " + code);
-            }
-            return count;
-        }
-        return count;
+//    public int search(Student[] students, int code) {
+//        boolean check = false;
+//        int count = 0;
+//        for ( int i = 0; i < students.length; i++) {
+//            if ( students[i] == null) {
+//                break;
+//            }
+//            if ( students[i].getCodeStudent() == code) {
+//                check = true;
+//                count = i;
+//            }
+//        }
+//        if (!check) {
+//            System.out.println("Không tìm thấy!!");
+//        }
+//        return count;
+//    }
     }
-}
+
+
+
+
