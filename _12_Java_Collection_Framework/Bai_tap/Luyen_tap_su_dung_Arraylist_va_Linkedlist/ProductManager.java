@@ -3,6 +3,7 @@ package _12_Java_Collection_Framework.Bai_tap.Luyen_tap_su_dung_Arraylist_va_Lin
 import com.sun.xml.internal.ws.policy.EffectiveAlternativeSelector;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 
@@ -77,6 +78,31 @@ public class ProductManager {
         } else {
             System.out.println("Please check the ID of product!!");
         }
+    }
+
+    public void deleteProduct(int id ) {
+        boolean checkId = false;
+        int index = 0;
+        Product removeProduct = null;
+
+        for ( int i = 0; i < productList.size(); i++) {
+            if ( productList.get(i).getId() == id) {
+                checkId = true;
+                index = i;
+                break;
+            }
+        }
+
+        if ( checkId ) {
+            removeProduct = productList.remove(index);
+        } else {
+            System.out.println("Please check the ID of the product!!!");
+        }
+    }
+
+    public void sortProductList ( List<Product> productList) {
+        priceComparator priceCom = new priceComparator();
+        Collections.sort(productList, priceCom);
     }
 
 }
