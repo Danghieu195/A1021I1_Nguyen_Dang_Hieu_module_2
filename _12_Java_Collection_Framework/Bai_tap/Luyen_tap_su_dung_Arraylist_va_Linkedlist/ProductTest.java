@@ -2,9 +2,12 @@ package _12_Java_Collection_Framework.Bai_tap.Luyen_tap_su_dung_Arraylist_va_Lin
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class ProductTest {
     public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
         Product product = new Product("Iphone", 1, 25.500);
         Product product1 = new Product("SamSung", 2, 24.500);
         Product product2 = new Product("Oppo", 3, 15.500);
@@ -19,7 +22,7 @@ public class ProductTest {
         productManager.addProduct(product2);
         productManager.addProduct(product3);
 
-        productManager.displayProduct(productList);
+//        productManager.displayProduct(productList);
 
 //        // Kiem tra phuong thuc edit
 //        productManager.editProduct(3);
@@ -34,15 +37,17 @@ public class ProductTest {
 
         //Kiem tra phuong thuc findProduct
 
-//        System.out.println("The product you want to find: ");
-////        System.out.println(productManager.findProduct("Oppo"));
+        System.out.println("The product you want to find: ");
+        String enterName = sc.nextLine();
+        System.out.println(productManager.findProduct(enterName));
+//        System.out.println(productManager.findProduct("Oppo"));
 
         // Kiem tra phuong thuc sap xep theo price
-        System.out.println("List product after sort: ");
-        productManager.sortProductList(productList);
-        for (Product products : productList) {
-            System.out.println(products);
-        }
+//        System.out.println("List product after sort: ");
+//        productManager.sortProductList(productList);
+//        for (Product products : productList) {
+//            System.out.println(products);
+//        }
 
 
     }

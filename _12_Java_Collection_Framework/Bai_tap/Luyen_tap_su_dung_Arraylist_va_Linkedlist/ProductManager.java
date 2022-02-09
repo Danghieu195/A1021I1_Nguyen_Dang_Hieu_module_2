@@ -36,7 +36,7 @@ public class ProductManager {
         Product foundProduct = null;
 
         for ( int i = 0; i < productList.size(); i++) {
-            if ( productList.get(i).getName() == name) {
+            if (productList.get(i).getName().equals(name)) {
                 checkName = true;
                 index = i;
                 break;
@@ -46,7 +46,7 @@ public class ProductManager {
         if (checkName) {
             foundProduct = productList.get(index);
         } else {
-            System.out.println("Please check the name of product!!");
+            System.out.println("Sorry, don't have " + name + " in our productList!!!");
         }
 
         return foundProduct;
