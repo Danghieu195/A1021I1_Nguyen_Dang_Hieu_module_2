@@ -8,6 +8,6 @@ public class ReverseString {
         Stack<String> stack = new Stack<>();
 
         Scanner sc = new Scanner(System.in);
-        
+
     }
 }

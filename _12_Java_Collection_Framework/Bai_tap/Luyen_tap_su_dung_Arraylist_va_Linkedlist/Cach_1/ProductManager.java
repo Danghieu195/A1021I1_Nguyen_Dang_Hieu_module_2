@@ -1,6 +1,4 @@
-package _12_Java_Collection_Framework.Bai_tap.Luyen_tap_su_dung_Arraylist_va_Linkedlist;
-
-import com.sun.xml.internal.ws.policy.EffectiveAlternativeSelector;
+package _12_Java_Collection_Framework.Bai_tap.Luyen_tap_su_dung_Arraylist_va_Linkedlist.Cach_1;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -20,22 +18,19 @@ public class ProductManager {
         return productList;
     }
 
-    public void addProduct( Product product) {
-        productList.add(product);
-    }
 
-    public void displayProduct ( List<Product> productList) {
-        for ( Product product : productList ) {
+    public void displayProduct(List<Product> productList) {
+        for (Product product : productList) {
             System.out.println(product);
         }
     }
 
-    public Product findProduct( String name) {
+    public Product findProduct(String name) {
         boolean checkName = false;
         int index = 0;
         Product foundProduct = null;
 
-        for ( int i = 0; i < productList.size(); i++) {
+        for (int i = 0; i < productList.size(); i++) {
             if (productList.get(i).getName().equals(name)) {
                 checkName = true;
                 index = i;
@@ -52,19 +47,19 @@ public class ProductManager {
         return foundProduct;
     }
 
-    public void editProduct( int id ) {
+    public void editProduct(int id) {
         boolean checkId = false;
         int index = 0;
 
-        for ( int i = 0; i < productList.size(); i ++) {
-            if( productList.get(i).getId() == id) {
+        for (int i = 0; i < productList.size(); i++) {
+            if (productList.get(i).getId() == id) {
                 checkId = true;
                 index = i;
                 break;
             }
         }
 
-        if ( checkId) {
+        if (checkId) {
             Product product = productList.get(index);
 
             System.out.println("Please enter a new name: ");
@@ -80,27 +75,27 @@ public class ProductManager {
         }
     }
 
-    public void deleteProduct(int id ) {
+    public void deleteProduct(int id) {
         boolean checkId = false;
         int index = 0;
         Product removeProduct = null;
 
-        for ( int i = 0; i < productList.size(); i++) {
-            if ( productList.get(i).getId() == id) {
+        for (int i = 0; i < productList.size(); i++) {
+            if (productList.get(i).getId() == id) {
                 checkId = true;
                 index = i;
                 break;
             }
         }
 
-        if ( checkId ) {
+        if (checkId) {
             removeProduct = productList.remove(index);
         } else {
             System.out.println("Please check the ID of the product!!!");
         }
     }
 
-    public void sortProductList ( List<Product> productList) {
+    public void sortProductList(List<Product> productList) {
         priceComparator priceCom = new priceComparator();
         Collections.sort(productList, priceCom);
     }

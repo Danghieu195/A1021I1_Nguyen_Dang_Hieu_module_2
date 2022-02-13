@@ -1,27 +1,25 @@
-package _12_Java_Collection_Framework.Bai_tap.Luyen_tap_su_dung_Arraylist_va_Linkedlist;
+package _12_Java_Collection_Framework.Bai_tap.Luyen_tap_su_dung_Arraylist_va_Linkedlist.Cach_1;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
 public class ProductTest {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
 
-        Product product = new Product("Iphone", 1, 25.500);
-        Product product1 = new Product("SamSung", 2, 24.500);
-        Product product2 = new Product("Oppo", 3, 15.500);
-        Product product3 = new Product("Xiaomi", 4, 10.500);
-
-        ProductManager productManager = new ProductManager();
-
-        List<Product> productList = productManager.getProductList();
-
-        productManager.addProduct(product);
-        productManager.addProduct(product1);
-        productManager.addProduct(product2);
-        productManager.addProduct(product3);
-
+//        Product product = new Product("Iphone", 1, 25.500);
+//        Product product1 = new Product("SamSung", 2, 24.500);
+//        Product product2 = new Product("Oppo", 3, 15.500);
+//        Product product3 = new Product("Xiaomi", 4, 10.500);
+//
+//        ProductManager productManager = new ProductManager();
+//
+//        List<Product> productList = productManager.getProductList();
+//
+//        productManager.addProduct(product);
+//        productManager.addProduct(product1);
+//        productManager.addProduct(product2);
+//        productManager.addProduct(product3);
+//
 //        productManager.displayProduct(productList);
 
 //        // Kiem tra phuong thuc edit
@@ -37,9 +35,9 @@ public class ProductTest {
 
         //Kiem tra phuong thuc findProduct
 
-        System.out.println("The product you want to find: ");
-        String enterName = sc.nextLine();
-        System.out.println(productManager.findProduct(enterName));
+//        System.out.println("The product you want to find: ");
+//        String enterName = sc.nextLine();
+//        System.out.println(productManager.findProduct(enterName));
 //        System.out.println(productManager.findProduct("Oppo"));
 
         // Kiem tra phuong thuc sap xep theo price
@@ -49,6 +47,7 @@ public class ProductTest {
 //            System.out.println(products);
 //        }
 
-
     }
+
+
 }
