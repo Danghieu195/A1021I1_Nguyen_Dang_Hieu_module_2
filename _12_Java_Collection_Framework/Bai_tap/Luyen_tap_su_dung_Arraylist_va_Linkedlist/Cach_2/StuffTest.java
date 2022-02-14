@@ -62,11 +62,11 @@ public class StuffTest {
 
     // Tạo phương thức display để hiển thị ra danh sách
     private static void display() {
-//        List<Stuff> stuffList = stuffManager.getAll();
-//        for ( int i = 0; i < stuffList.size(); i++) {
-//            System.out.println(stuffList.get(i)); // Phương thức get() là lấy ra
-//    }
-        stuffManager.getAll().forEach(System.out::println);
+        List<Stuff> stuffList = stuffManager.getAll();
+        for ( int i = 0; i < stuffList.size(); i++) {
+            System.out.println(stuffList.get(i));
+    }
+//        stuffManager.getAll().forEach(System.out::println);
     }
 
 

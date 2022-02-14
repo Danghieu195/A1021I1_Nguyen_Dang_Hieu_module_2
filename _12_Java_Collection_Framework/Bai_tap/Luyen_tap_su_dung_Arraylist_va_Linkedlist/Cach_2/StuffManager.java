@@ -13,10 +13,10 @@ public class StuffManager {
     private static List<Stuff> stuffs = new ArrayList<>();
 
     // Tạo phương phức create để tạo mới 1 sản phẩm với Id tăng dần từ 0
-    public void create(Stuff stuff) {
-        stuff.setId(stuffs.size() + 1);
-        stuffs.add(stuff);
-    }
+//    public void create(Stuff stuff) {
+//        stuff.setId(stuffs.size() + 1);
+//        stuffs.add(stuff);
+//    }
 
     // Tạo phương thức getAll để trả về danh sách stuffs
     public List<Stuff> getAll() {
@@ -36,16 +36,16 @@ public class StuffManager {
 
     // Tạo phương thức search() để hiển thị ra các tên sản phẩm có liên quan
     public List<Stuff> search(String name) {
-//        List<Stuff> result = new ArrayList<>();
-//        for (int i = 0; i < stuffs.size(); i++) {
-//            if (stuffs.get(i).getName().contains(name)) {
-//                stuffs.add(stuffs.get(i));
-//            }
-//        }
-//        return result;
+        List<Stuff> result = new ArrayList<>();
+        for (int i = 0; i < stuffs.size(); i++) {
+            if (stuffs.get(i).getName().contains(name)) {
+                result.add(stuffs.get(i));
+            }
+        }
+        return result;
 
         // Thuộc tính contains(name) để tìm ra những sản phẩm có kí tự giống với người dùng cần tìm
-      return stuffs.stream().filter(e -> e.getName().contains(name)).collect(Collectors.toList());
+//      return stuffs.stream().filter(e -> e.getName().contains(name)).collect(Collectors.toList());
     }
 
 
