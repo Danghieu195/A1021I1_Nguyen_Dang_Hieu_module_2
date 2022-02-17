@@ -3,7 +3,7 @@ package _13_Search_Algorithms.Bai_tap.Cai_dat_thuan_toan_tim_kiem_su_dung_de_quy
 import com.sun.xml.internal.ws.api.model.wsdl.WSDLOutput;
 
 import java.util.ArrayList;
-import java.util.Comparator;
+//import java.util.Comparator;
 import java.util.List;
 import java.util.Scanner;
 
